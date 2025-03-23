@@ -308,7 +308,7 @@ const submitJob = () => {
    
       <div className="flex flex-col gap-2.5 items-start mt-4 md:mt-6">
       <h1 className="text-xl font-medium text-[#232729] dark:text-[#fbfbfb] mb-2 mt-4">Reminder to Apply Later</h1>
-        {reminderData.length === 0 ? (<div className=" w-full items-center text-center justify-items-center flex-col">
+        {reminderData.length === 0 ? (<div className=" w-full items-center text-center justify-items-center text-sm flex-col">
           <img className="w-[250px] h-[250px] object-contain" src={image} alt="" />
           Add any job to the reminder to show them here</div>) : 
     reminderData.map((reminder, index) => (

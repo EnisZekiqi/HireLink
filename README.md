@@ -1,8 +1,9 @@
-# **HireLink **
+# **HireLink**
 HireLink is a job application tracking system built using React.js, developed as part of the Self-Directed Internship – React.js Developer – Present. This project helps users manage job applications efficiently, offering detailed tracking, reminders, and UI customization.
 
-Project Features
-1. Dashboard
+### Project Features
+
+## **Dashboard**  
 The Dashboard provides an overview of your job applications and quick access to essential data:
 
 Application Statistics:
@@ -27,7 +28,7 @@ Saved Drafts:
 
 Jobs that are saved as drafts (in case of incomplete entries or page refresh) will be accessible here.
 
-2. Application Section
+## **Application Section**  
 This section displays all job applications as individual Job Cards, with each card showing the following details:
 
 Job Information: Company, Position, Status, Date Applied, and Progress.
@@ -55,7 +56,7 @@ Search Jobs by Keywords
 
 And more, to streamline access and enhance user experience.
 
-3. Settings Section
+## **Settings Section**  
 The Settings section provides multiple customization options to improve user experience:
 
 Theme Toggler: Switch between light and dark themes.
