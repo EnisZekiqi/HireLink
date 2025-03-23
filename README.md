@@ -1,5 +1,5 @@
 HireLink
-HireLink is a job application tracking system built using React.js, developed as part of the Self-Directed Internship – React.js Developer (Ongoing) – Present. This project helps users manage job applications efficiently, offering detailed tracking, reminders, and UI customization.
+HireLink is a job application tracking system built using React.js, developed as part of the Self-Directed Internship – React.js Developer – Present. This project helps users manage job applications efficiently, offering detailed tracking, reminders, and UI customization.
 
 Project Features
 1. Dashboard
