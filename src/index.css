@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+/* Custom dark mode using data-theme */
+
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -6,6 +9,3 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body{
-  background-color: #1a1a1a;
-}

@@ -1,31 +1,5 @@
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
 
 .card {
   padding: 2em;
@@ -33,4 +7,122 @@
 
 .read-the-docs {
   color: #888;
+}
+.switch {
+  position: relative;
+  height: 1.5rem;
+  width: 3rem;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 9999px;
+  background-color: rgba(100, 116, 139, 0.377);
+  transition: all .3s ease;
+}
+.drafts-section::-webkit-scrollbar {
+  width: 8px;
+}
+
+.drafts-section::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.drafts-section::-webkit-scrollbar-thumb {
+  background-color: #4fb0f4;
+  border-radius: 20px;
+  border: 2px solid #042740;
+}
+.switch:checked {
+  background-color: #4fb0f4;
+}
+
+.switch::before {
+  position: absolute;
+  content: "";
+  left: calc(1.5rem - 1.6rem);
+  top: calc(1.5rem - 1.6rem);
+  display: block;
+  height: 1.6rem;
+  width: 1.6rem;
+  cursor: pointer;
+  border: 1px solid rgba(26, 58, 11, 0.527);
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 3px 10px rgba(100, 116, 139, 0.327);
+  transition: all .3s ease;
+}
+
+.switch:hover::before {
+  box-shadow: 0 0 0px 8px rgba(0, 0, 0, .15)
+}
+
+.switch:checked:hover::before {
+  box-shadow: 0 0 0px 8px rgba(26, 58, 11, .15)
+}
+
+.switch:checked:before {
+  transform: translateX(100%);
+  border-color: rgba(26, 58, 11, 1);
+}
+/* From Uiverse.io by Madflows */ 
+.toggle-switch {
+  position: relative;
+  width: 60px; /* Reduced width */
+  height: 30px; /* Reduced height */
+  --light: #fbfbfb;
+  --dark: #232729;
+  --link: rgb(27, 129, 112);
+  --link-hover: rgb(24, 94, 82);
+}
+
+.switch-label {
+  position: absolute;
+  width: 100%;
+  height: 30px; /* Adjusted height */
+  background-color: var(--dark);
+  border-radius: 15px; /* Adjusted border-radius */
+  cursor: pointer;
+  border: 2px solid var(--dark); /* Adjusted border */
+}
+
+.checkbox {
+  position: absolute;
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px; /* Adjusted border-radius */
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.checkbox:checked ~ .slider {
+  background-color: var(--light);
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  top: 2.5px; /* Adjusted top */
+  left: 5px; /* Adjusted left */
+  width: 20px; /* Adjusted width */
+  height: 20px; /* Adjusted height */
+  border-radius: 50%;
+  -webkit-box-shadow: inset 8px -3px 0px 0px var(--light); /* Adjusted shadow */
+  box-shadow: inset 8px -3px 0px 0px var(--light); /* Adjusted shadow */
+  background-color: var(--dark);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.checkbox:checked ~ .slider::before {
+  -webkit-transform: translateX(30px); /* Adjusted transform */
+  -ms-transform: translateX(30px); /* Adjusted transform */
+  transform: translateX(30px); /* Adjusted transform */
+  background-color: var(--dark);
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }

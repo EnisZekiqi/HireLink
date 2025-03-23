@@ -1,26 +1,34 @@
-import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
-import Dashboard from './pages/Dashboard'
-import Applications from './pages/Applications'
-import Settings from './pages/Settings'
-import Navbar from './components/Navbar'
+import { BrowserRouter as Router, Routes, Route, Outlet } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Dashboard from "./pages/Dashboard";
+import Applications from "./pages/Applications";
+import Settings from "./pages/Settings";
+import { ToastContainer } from "react-toastify";
+import './App.css';
 
-function App() {
+function Layout() {
 
+    const savedSettings = JSON.parse(localStorage.getItem("notificationSettings")) || {};
 
   return (
-    <Router>  {/* ✅ Wrap everything inside Router */}
+    <>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/applications" element={<Applications />} />
-        <Route path="/settings" element={<Settings />} />
-      </Routes>
-    </Router>
-  )
+      <Outlet /> {/* ✅ This ensures nested pages are displayed */}
+<ToastContainer
+        position={savedSettings.position || "top-right"}
+        autoClose={savedSettings.duration || 5000}
+      />    </>
+  );
 }
 
-export default App
+export default function App() {
+  return (
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Dashboard />} /> {/* ✅ Default route */}
+          <Route path="applications" element={<Applications />} />
+          <Route path="settings" element={<Settings />} />
+        </Route>
+      </Routes>
+  );
+}
