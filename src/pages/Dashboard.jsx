@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import image from '../assets/undraw_correct-answer_vjt7.svg'
-import { CiTrash    } from "react-icons/ci";
+import { CiTrash ,CiWavePulse1 ,CiStar,CiFileOff ,CiFileOn    } from "react-icons/ci";
 
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,PieChart,Pie,Cell } from 'recharts';
 const Dashboard = () => {
@@ -225,9 +225,9 @@ const submitJob = () => {
       variants={cardVariants}
       whileHover="hover"
       className="bg-gray-800 text-white p-6 rounded-lg shadow-lg flex flex-col text-center justify-center items-center hover:scale-105 transition-all">
-        📊
+        <CiWavePulse1  className="w-[22px] h-[22px] md:w-[25px] md:h-[25px]"/>
         <h2 className="text-2xl font-bold">{totalAplication}</h2>
-        <p className="text-gray-400 text-center">Total Applications</p>
+        <p className="text-gray-400 text-center text-sm md:text-base">Total Applications</p>
       </motion.div>
 
       {/* Active Applications */}
@@ -235,9 +235,9 @@ const submitJob = () => {
       variants={cardVariants}
       whileHover="hover"
       className="bg-[#0440042a] dark:bg-[#232729] text-black border border-[#044004] dark:border-[#4ff44f] justify-center p-6 rounded-lg shadow-lg flex flex-col items-center hover:scale-105 transition-all">
-        ✅
+        <CiFileOn className="w-[22px] h-[22px] md:h-[25px] md:w-[25px] text-[#044004] dark:text-[#4ff44f]"/>
         <h2 className="text-2xl font-bold text-[#044004] dark:text-[#4ff44f]">{totalActive}</h2>
-        <p  className="text-[#044004] dark:text-[#4ff44f] text-center">Active Applications</p>
+        <p  className="text-[#044004] dark:text-[#4ff44f] text-center text-sm md:text-base">Active Applications</p>
       </motion.div>
 
       {/* Rejected Applications */}
@@ -245,9 +245,9 @@ const submitJob = () => {
       variants={cardVariants}
       whileHover="hover"
       className="bg-[#4004042a] dark:bg-[#232729] border border-[#400404] dark:border-[#f44f4f] text-black p-6 justify-center rounded-lg shadow-lg flex flex-col items-center hover:scale-105 transition-all">
-        ❌
+        <CiFileOff  className="w-[22px] h-[22px] md:h-[25px] md:w-[25px] text-[#400404] dark:text-[#f44f4f]"/>
         <h2 className="text-2xl font-bold text-[#400404] dark:text-[#f44f4f]">{totalRejected}</h2>
-        <p className="text-[#400404] dark:text-[#f44f4f] text-center w-full">Rejected Applications</p>
+        <p className="text-[#400404] dark:text-[#f44f4f] text-center w-full text-sm md:text-base">Rejected Applications</p>
       </motion.div>
 
       {/* Offers Received */}
@@ -255,9 +255,9 @@ const submitJob = () => {
       variants={cardVariants}
       whileHover="hover"
       className="bg-[#4faff42a] dark:bg-[#232729] text-[#042740] dark:text-[#4fb0f4] border border-[#042740] justify-center dark:border-[#4fb0f4] p-6 rounded-lg shadow-lg flex flex-col items-center hover:scale-105 transition-all">
-        🎉
+        <CiStar className="w-[22px] h-[22px] md:w-[25px] md:h-[25px]"/>
         <h2 className="text-2xl font-bold">{totalOffers}</h2>
-        <p className="text-center">Offers Received</p>
+        <p className="text-center text-sm md:text-base">Offers Received</p>
       </motion.div>
     </div>
       <div className="flex item-center flex-col h-fit">

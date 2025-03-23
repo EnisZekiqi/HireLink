@@ -12,7 +12,7 @@ const Applications = () => {
          { id: 1, company: "StarDust", position: ".NET Developer", status: 'Active',  dateApplied: "", progress: 'Applied'  },
         { id: 2, company: "Dark Magician", position: "Frontend Developer", status: 'Active',   dateApplied: "",progress: 'Offer Recived'  },
         { id: 3, company: "Blue Eyes", position: "Backend Developer", status: 'Active',   dateApplied: "",progress: 'Applied'  },
-        { id: 4, company: "Synchro Z", position: "Chef", status: 'Closed', dateApplied: newJob.dateApplied || new Date().toISOString().split("T")[0], progress: 'Rejected'  },
+        { id: 4, company: "Synchro Z", position: "Chef", status: 'Closed', dateApplied:"", progress: 'Rejected'  },
       { id: 5, company: "Solo Leveling", position: "Miner", status: "Active",  dateApplied: "",progress: 'Rejected' },
       {id: 6, company: "LinkD", position: "Recruiter", status: "Closed",  dateApplied: "",progress:'Offer Recived'},
        { id: 7, company: "Vipa ", position: "Transporter", status: "Closed",   dateApplied: "",progress: 'Rejected' },
@@ -346,7 +346,7 @@ useEffect(() => {
                 <div className="flex flex-col items-start">
                     <h2 className="text-xl font-medium text-[#232729] dark:text-[#fbfbfb]">Applications</h2>
                 <p className="text-xs md:text-sm font-light flex items-center gap-2 text-[#5e676e] dark:text-[#d9d9d9] mt-2 ml-0">
-                if you are a company and have a job application
+                 Are you a company & have a job application
 <button onClick={() => {
     const savedDraft = JSON.parse(localStorage.getItem("draftJob"));
     if (savedDraft) {
@@ -499,7 +499,8 @@ className="bg-transparent  text-[#848e95] dark:text-[#a6a6a6] text-xs md:text-sm
                                         ref={provided.innerRef}
                                         {...provided.draggableProps}
                                         {...provided.dragHandleProps}
-                                        className="card flex justify-between rounded-md border border-[#dde0e2] dark:border-[#1a1a1a] flex-col w-[350px] h-[275px] items-start gap-10 p-3 bg-[#fbfbfb] dark:bg-[#262626] text-[#232729] dark:text-[#fbfbfb]"
+                                        className="card flex justify-between rounded-md border border-[#fbfbfb] dark:border-[#3b4145] flex-col w-[350px] h-[275px] items-start gap-10 p-3 bg-[#fbfbfb] dark:bg-[#262626] text-[#232729] dark:text-[#fbfbfb]"
+                                        style={{border:"1px solid #5e676e"}}
                                     >
                                         <div className="flex flex-col gap-2 -mt-2 w-full">
                                             <div className="flex items-center justify-between mb-6 w-full">
@@ -517,7 +518,7 @@ className="bg-transparent  text-[#848e95] dark:text-[#a6a6a6] text-xs md:text-sm
                                                     Job Status:
                                                     <p style={{ color: job.status === 'Active' ? '#1ff11f' : '#f11f1f' }}>{job.status}</p>
                                                 </span>
-                                                <p className="text-[#5e676e] dark:text-[#d6d9dc] font-light text-md">
+                                                <p className="text-[#5e676e] dark:text-[#d6d9dc]  font-light text-md">
                                                     Date Applied: <b className="text-md font-light text-[#1f9af1] dark:text-[#4fb0d3]">{job.dateApplied}</b>
                                                 </p>
                                             </div>
@@ -572,7 +573,7 @@ className="bg-transparent  text-[#848e95] dark:text-[#a6a6a6] text-xs md:text-sm
             {addJob &&
                 <div>
                     <div onClick={() => setAddJob(false)} className="fixed top-0 transition-all duration-300 bottom-0 left-0 right-0 bg-[rgba(0,0,0,0.5)] blur-md"></div>
-                    <div className="fixed p-2 w-[400px] transition-all duration-300 h-fit top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#262626] flex flex-col items-center gap-4 border border-[#404040] rounded-md">
+                    <div className="fixed p-2 w-[350px] md:w-[400px] transition-all duration-300 h-fit top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#262626] flex flex-col items-center gap-4 border border-[#404040] rounded-md">
                     <div className="flex items-center gap-2 justify-between w-full">
                       {changeText ?  <h1 className="font-medium text-[#fbfbfb] text-lg"> Edit Job Application</h1>: <h1 className="font-medium text-[#fbfbfb] text-lg"> Create A Job Application</h1>}                        
                       <button className="block md:hidden" onClick={()=>setAddJob(false)}><CiCircleRemove  className="w-[22px] h-[22px]"/> </button>
@@ -611,7 +612,7 @@ className="bg-transparent  text-[#848e95] dark:text-[#a6a6a6] text-xs md:text-sm
                          <span className="text-[#fbfbfb]">Date Applied</span>
                             <input 
                                 type="date" 
-                                className="text-[#fbfbfb]"
+                                className="text-[#fbfbfb]  border border-[#404040] p-1"
                                 name="dateApplied" 
                                 value={newJob.dateApplied} 
                                 onChange={handleInputChange} 
@@ -720,14 +721,14 @@ className="bg-transparent  text-[#848e95] dark:text-[#a6a6a6] text-xs md:text-sm
                 exit={{ opacity: 0, transition: { duration: 0.5 } }}
                         className="">
                  <div onClick={() => setDateReminder(false)} className="fixed top-0 transition-all duration-300 bottom-0 left-0 right-0 bg-[rgba(0,0,0,0.5)] blur-md"></div>
-                        <div className="fixed -2 w-[400px] transition-all duration-300 h-[200px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#262626] flex flex-col items-center gap-4 border border-[#404040] rounded-md">
+                        <div className="fixed -2 w-[350px] md:w-[400px]  transition-all duration-300 h-[210px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#262626] flex flex-col items-center gap-4 border border-[#404040] rounded-md">
                             <h1 className="text-[#fbfbfb] font-medium text-md mt-4">Remind yourself later</h1>
                             <div className="flex items-center justify-between w-full gap-2 px-2">
                                 <p className="text-sm font-light text-[#d6d9dc]">Company: <b className="font-medium text-sm text-[#4fb0d3]">{newJob.company}</b> </p>
                                 <p className="text-sm font-light text-[#d6d9dc]"> Position: <b className="font-medium text-sm text-[#4fb0d3]">{newJob.position}</b></p>
                             </div>
                             <input type="date"
-                           className="text-[#fbfbfb] mt-2"
+                           className="text-[#fbfbfb] border border-[#404040] p-1 mt-2"
                             name="Date Reminder" id="" value={reminderTime} onChange={handleReminderTime} />
                             <button onClick={submitReminder} className="bg-[#1a1a1a] text-[#fbfbfb] p-2 rounded-md w-full mx-2 mt-4">Submit</button>
                     </div>
