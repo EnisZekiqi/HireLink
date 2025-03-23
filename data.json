@@ -1,0 +1,17 @@
+[
+    {
+        "username1": "user1",
+        "age": 25,
+        "money": 1000
+    },
+    {
+        "username2": "user2",
+        "age": 30,
+        "money": 1500
+    },
+    {
+        "username3": "user3",
+        "age": 22,
+        "money": 2000
+    }
+]
